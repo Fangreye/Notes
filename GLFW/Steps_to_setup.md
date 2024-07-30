@@ -1,4 +1,4 @@
-# Setup GLFW for Visual Studio code from source
+# Setup GLFW for Visual Studio code from source in Win11
 ## Install gcc and g++ compiler
 1. Download MSYS2 from https://www.msys2.org/, and install it.
 2. After installation, open MSYS2 MinGW 64-bit terminal.
@@ -6,9 +6,9 @@
 ```bash
 pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
 ```
-4. Add the following path to the system PATH:
+4. Add the following path to the system PATH, as it contains the executable file of gcc and g++:
 ```
-E:\MSYS2\ucrt64\bin
+E:\MSYS2\ucrt64\bin // Change this with your MSYS2\ucrt64
 ```
 5. Now check if the gcc and g++ compiler is installed by running the following command in a new cmd terminal:
 ```bash
