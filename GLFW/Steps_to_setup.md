@@ -43,7 +43,7 @@ mingw32-make
     - Specification: OpenGL
     - gl: Version 4.6
     - Profile: Core
-2. Download the zip file and extract all files to 'E:\MSYS2\ucrt64\bin'
+2. Download the zip file and extract all files.
 3. Now you can include glad.h in your project and link glad.c with your project
 ## Setup Visual Studio Code
 1. Install the C/C++ extension by Microsoft
@@ -53,7 +53,8 @@ mingw32-make
 ```json
     "includePath": [
         "${workspaceFolder}/**",
-        "E:/OpenGL/glfw-3.4/include" // Add the path to the GLFW include folder
+        "E:/OpenGL/glfw-3.4/include", // Change this path to your GLFW include folder
+        "E:/OpenGL/glad/include" // Change this path to your GLAD include folder
     ],
 ```
 5. Create a new file named 'tasks.json' in the .vscode folder and add the following code:
@@ -64,17 +65,17 @@ mingw32-make
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
-            "command": "E:\\MSYS2\\ucrt64\\bin\\g++.exe",
+            "command": "E:\\MSYS2\\ucrt64\\bin\\g++.exe", 
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${file}",
+                "E:/OpenGL/glad/src/glad.c", // Change this path to your glad.c
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe",
-                "-I",
-                "E:/OpenGL/glfw-3.4/include",
-                "-L",
-                "E:/OpenGL/glfw-3.4/build/src",
+                "-I", "E:/OpenGL/glad/include", // Change this path to yours
+                "-I", "E:/OpenGL/glfw-3.4/include", // Change this path to yours
+                "-L","E:/OpenGL/glfw-3.4/build/src", // Change this path to yours
                 "-lglfw3",
                 "-lopengl32",
                 "-lgdi32"
@@ -95,4 +96,4 @@ mingw32-make
     ]
 }
 ```
-6. Congratulation! Now you can play around with OpenGL in Visual Studio Code.
+6. Congratulation! Now you can play around with OpenGL in Visual Studio Code. Remember to include glad.h before glfw3.h
