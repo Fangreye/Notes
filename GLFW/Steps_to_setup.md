@@ -29,9 +29,8 @@ cmake --version
 4. Specify the generator as 'MinGW Makefiles' and click on 'Configure'
     - You might need Doxygen before configure.
 5. After configuration, click on 'Generate'
-6. Now create a build folder in the GLFW source code folder
-7. Open MSYS2 MinGW 64-bit terminal and navigate to the build folder
-8. Run the following command to build GLFW:
+6. Now create a build folder in the GLFW source code folder and change into it.
+7. Run the following command to build GLFW:
 ```bash
 cmake -G "MinGW Makefiles" ..
 mingw32-make
