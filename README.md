@@ -1,2 +1,2 @@
 # Notes
-Grocessory notes
+My notes backed up. Feel free to share it.
